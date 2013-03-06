@@ -1,0 +1,91 @@
+/*****************
+* Shared Styles
+******************/
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+  padding: 10px;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-inner {
+  padding: 10px;
+  margin: 0 0px;
+}
+
+.sticky-footer {
+  bottom: 0;
+  position: fixed;
+}
+
+/*
+Home View
+*/
+
+.home-container {
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+
+.inner-container {
+  display: table-cell;
+  height: 300px;
+  vertical-align: middle;
+}
+
+/*
+Activity View
+*/
+#activity-list {
+  margin: 0;
+  list-style: none;
+}
+
+#activity-list li {
+  padding: 10px;
+  min-height: 50px;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+#activity-list li img {
+  float: left;
+}
+
+#activity-list .activity-content {
+  margin: 0 0 0 60px;
+}
+
+/*
+Find Person View
+*/
+#find-form {
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.input-append {
+  margin-bottom: 0;
+}
