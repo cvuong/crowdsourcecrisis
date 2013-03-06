@@ -1,8 +1,6 @@
-class Cc.Models.Tweet extends Backbone.Model
+class CrowdsourceCrisis.Models.Tweet extends Backbone.Model
   paramRoot: 'tweet'
 
-  defaults:
-
-class Cc.Collections.TweetsCollection extends Backbone.Collection
-  model: Cc.Models.Tweet
+class CrowdsourceCrisis.Collections.TweetsCollection extends Backbone.Collection
+  model: CrowdsourceCrisis.Models.Tweet
   url: '/tweets'
