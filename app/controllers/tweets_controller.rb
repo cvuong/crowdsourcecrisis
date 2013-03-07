@@ -2,6 +2,15 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
+    Twitter.configure do |config|
+      config.consumer_key = "3RTQQFa3cfVfYrKIq6HwQ"
+      config.consumer_secret = "oOvEvwbCHMPiX0w64xydHIy0WGrT9fOtNhbP7MIU"
+      config.oauth_token = "281180160-TfT2qf1EQj9CR70T0y4GvdxOjAJGiFcfqeTsOjgI"
+      config.oauth_token_secret = "DM72hPh15LdGgGJLFORcQaR8GdFprH1FXjD0owg3Ao"
+    end
+
+    
+    
     @tweets = Tweet.all
 
     respond_to do |format|
