@@ -24,3 +24,21 @@
   <li class="active"><a href="#">Map</a></li>
   <li><a href="#">test</a></li>
 </ul>
+
+
+<script type="text/javascript">
+  $(function() {
+    var tweets = <%= @tweets.to_json.html_safe -%>;
+
+    _.each(tweets, function(tweet, index, array) {
+      if (tweet.geo) {
+        console.log(tweet.geo);
+      }
+    });
+
+
+    window.router = new Cc.Routers.Router({ tweets: <%= @tweets.to_json.html_safe -%>});
+    Backbone.history.start();
+  });
+</script>
+
