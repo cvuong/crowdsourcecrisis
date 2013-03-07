@@ -9,9 +9,9 @@ class TweetsController < ApplicationController
       config.oauth_token_secret = "DM72hPh15LdGgGJLFORcQaR8GdFprH1FXjD0owg3Ao"
     end
 
-    
-    
-    @tweets = Tweet.all
+    @tweets = Twitter.search("%23earthquake", :count => 100).results
+
+    print @posts
 
     respond_to do |format|
       format.html # index.html.erb

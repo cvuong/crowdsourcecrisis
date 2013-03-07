@@ -1,1 +1,17 @@
-aa
+This is the index page
+
+<script type="text/javascript">
+  $(function() {
+    var tweets = <%= @tweets.to_json.html_safe -%>;
+
+    _.each(tweets, function(tweet, index, array) {
+      if (tweet.geo) {
+        console.log(tweet.geo);
+      }
+    });
+
+
+    window.router = new Cc.Routers.Router({ tweets: <%= @tweets.to_json.html_safe -%>});
+    Backbone.history.start();
+  });
+</script>
