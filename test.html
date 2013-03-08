@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Crowdsource Crisis</title>
+</head>
+<body>
+
+<div id="main">
+  a
+</div>
+
+<script type="text/javascript">
+
+  var MAPS_API_KEY = "AIzaSyDTsJJjoBfh0V5txq77pGK1vVHk97sQ_zA";
+
+  function initialize() {
+    var mapOptions = {
+      zoom: 8,
+      center: new google.maps.LatLng(37.7750, 122.4183),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(document.getElementById("main"), mapOptions);
+  }
+
+  function loadScript() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "http://maps.googleapis.com/maps/api/js?key=aAIzaSyDTsJJjoBfh0V5txq77pGK1vVHk97sQ_zA&sensor=false&callback=initialize";
+    document.body.appendChild(script);
+  }
+
+  window.onload = loadScript;
+</script>
+
+</body>
+</html>

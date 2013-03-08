@@ -14,15 +14,15 @@
 </ul>
 
 <div id="main" class="container-fluid">
-  <div id="map">
-    
-  </div>
+  <div id="map"></div>
 </div>
 
+<!--
 <ul class="nav nav-pills sticky-footer">
   <li class="active"><a href="#">Map</a></li>
   <li><a href="#">test</a></li>
 </ul>
+-->
 
 
 <script type="text/javascript">
@@ -45,14 +45,13 @@
   function initialize() {
     var mapOptions = {
       zoom: 8,
-      center: new google.maps.LatLng(37.7750, 122.4183),
+      center: new google.maps.LatLng(37.7750, -122.4183),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
   }
 
   function loadScript() {
-    console.log("hi");
     var script = document.createElement("script");
     script.type = "text/javascript";
     script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDTsJJjoBfh0V5txq77pGK1vVHk97sQ_zA&sensor=false&callback=initialize";
