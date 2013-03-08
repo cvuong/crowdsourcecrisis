@@ -13,11 +13,10 @@
   <li><a href="#">Find Person</a></li>
 </ul>
 
-<div class="container-fluid">
-  <div class="row-fluid">
-    aaa
+<div id="main" class="container-fluid">
+  <div id="map">
+    
   </div>
-
 </div>
 
 <ul class="nav nav-pills sticky-footer">
@@ -32,13 +31,33 @@
 
     _.each(tweets, function(tweet, index, array) {
       if (tweet.geo) {
-        console.log(tweet.geo);
+        //console.log(tweet.geo);
       }
     });
 
 
     window.router = new Cc.Routers.Router({ tweets: <%= @tweets.to_json.html_safe -%>});
     Backbone.history.start();
-  });
-</script>
 
+
+  });
+
+  function initialize() {
+    var mapOptions = {
+      zoom: 8,
+      center: new google.maps.LatLng(37.7750, 122.4183),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  }
+
+  function loadScript() {
+    console.log("hi");
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyDTsJJjoBfh0V5txq77pGK1vVHk97sQ_zA&sensor=false&callback=initialize";
+    document.body.appendChild(script);
+  }
+
+  window.onload = loadScript;
+</script>
