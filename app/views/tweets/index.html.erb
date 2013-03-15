@@ -7,11 +7,10 @@
   </div>
 </div>
 
-<ul class="nav nav-pills">
-  <li class="active"><a href="#">Map</a></li>
-  <li><a href="#">Activity</a></li>
-  <li><a href="#">Find Person</a></li>
-</ul>
+<div id="navigation">
+
+</div>
+
 
 <div id="main" class="container-fluid">
   <div id="map"></div>
@@ -27,6 +26,7 @@
 
 <script type="text/javascript">
   $(function() {
+    window.navView = new Cc.Views.NavView();
     var tweets = <%= @tweets.to_json.html_safe -%>;
 
     _.each(tweets, function(tweet, index, array) {
