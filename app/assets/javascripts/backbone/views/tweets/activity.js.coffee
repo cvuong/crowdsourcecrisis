@@ -12,6 +12,7 @@ class Cc.Views.ActivityView extends Backbone.View
     @collection.forEach(@addOne, @)
 
   addOne: (model) ->
+    console.log(model)
     @view = new Cc.Views.TweetView({ model: model })
     @$el.find("#activity-list").append @view.render().el
 

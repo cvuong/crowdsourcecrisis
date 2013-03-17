@@ -1,7 +1,8 @@
-<img src="http://placehold.it/50x50" />
-<div class="activity-content">Content
+<img src="<%= user.profile_image_url %>" />
+<div class="activity-content">
+  <%= text %>
   <div class="activity-meta">
-    <span class="handle">@danawhite</span>
-    <span class="name">Dana White</span>
-    <span class="posted">3 hours ago</span>
+    <span class="handle"><a href="http://www.twitter.com/<%= user.screen_name %>"><%= user.screen_name %></a></span>
+    <span class="name"><%= user.name %></span>
+    <span class="posted"><%= created_at %></span>
 </div>
