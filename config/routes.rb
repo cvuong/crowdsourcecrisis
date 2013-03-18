@@ -1,7 +1,7 @@
 Cc::Application.routes.draw do
   resources :tweets
 
-  match '/:tag/' => 'tweets#index'
+  match '/:tag/:country' => 'tweets#index'
 
 
   # The priority is based upon order of creation:
