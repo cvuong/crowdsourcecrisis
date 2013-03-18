@@ -27,7 +27,7 @@
 <script type="text/javascript">
   $(function() {
     window.navView = new Cc.Views.NavView();
-    var tweets = <%= @tweets.to_json.html_safe -%>;
+    window.tweets = <%= @tweets.to_json.html_safe -%>;
 
     _.each(tweets, function(tweet, index, array) {
       if (tweet.geo) {
@@ -49,6 +49,37 @@
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    var markers = [];
+
+    var geocoder = new google.maps.Geocoder();
+       geocoder.geocode( { 'address': 'Japan'}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            map.setCenter(results[0].geometry.location);
+            map.fitBounds(results[0].geometry.viewport);
+            map.setZoom(5);
+          }
+        });
+
+    _.each(window.tweets, function(tweet, index, array) {
+      if (tweet.geo) {
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(tweet.geo.coordinates[0], tweet.geo.coordinates[1]),
+          map: map
+        });
+        var infoWindow = new google.maps.InfoWindow({
+          content: "test"
+        });
+        makeInfoWindowEvent(map, infoWindow, marker);
+        markers.push(marker);
+      }
+    });
+
+  }
+
+  function makeInfoWindowEvent(map, infoWindow, marker) {
+    google.maps.event.addListener(marker, 'click', function() {
+      infoWindow.open(map, marker);
+    });
   }
 
   function loadScript() {

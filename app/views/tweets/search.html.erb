@@ -1,8 +1,16 @@
 <div class="home-container">
   <div class="inner-container">
     <h1>CrowdsourceCrisis</h1>
-    <input type="text" placeholder="Enter crisis tag"></input>
+    <label># </label>
+    <input id="tag" type="text" placeholder="Enter crisis tag"></input>
+
+    <label>Country: </label>
+    <input id="country" type="text" placeholder="Enter country name"></input>
     <br />
-    <a class="btn btn-primary" href="#">Search</a>
+
+    Examples: <a href="/earthquake/Japan">earthquake (Japan)</a>, <a href="/earthquake/Haiti"> earthquake (Haiti)</a>
+    <br />
+
+    <a id="search" class="btn btn-primary" href="#">Search</a>
   </div>
 </div>

@@ -1,4 +1,4 @@
-class Cc.Views.MapView extends Backbone.Views
+class Cc.Views.MapView extends Backbone.View
 
   el: "#main"
 
@@ -12,3 +12,7 @@ class Cc.Views.MapView extends Backbone.Views
     @collection.forEach(@addOne, @)
 
   addOne: (model) ->
+
+  render: ->
+    @$el.html @template()
+    @
