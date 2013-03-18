@@ -29,13 +29,6 @@
     window.navView = new Cc.Views.NavView();
     window.tweets = <%= @tweets.to_json.html_safe -%>;
 
-    _.each(tweets, function(tweet, index, array) {
-      if (tweet.geo) {
-        //console.log(tweet.geo);
-      }
-    });
-
-
     window.router = new Cc.Routers.Router({ tweets: <%= @tweets.to_json.html_safe -%>});
     Backbone.history.start();
 
@@ -43,17 +36,18 @@
   });
 
   function initialize() {
-    var country = "<%= @country %>";
+    var country = "<%= @country %>",
+        map = new google.maps.Map(document.getElementById("map"), mapOptions),
+        markers = [],
+        mapOptions, geocoder;
 
-    var mapOptions = {
+    mapOptions = {
       zoom: 8,
       center: new google.maps.LatLng(37.7750, -122.4183),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    var markers = [];
 
-    var geocoder = new google.maps.Geocoder();
+    geocoder = new google.maps.Geocoder();
        geocoder.geocode( { 'address': country}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
             map.setCenter(results[0].geometry.location);
