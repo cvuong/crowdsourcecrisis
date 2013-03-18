@@ -43,6 +43,8 @@
   });
 
   function initialize() {
+    var country = "<%= @country %>";
+
     var mapOptions = {
       zoom: 8,
       center: new google.maps.LatLng(37.7750, -122.4183),
@@ -52,7 +54,7 @@
     var markers = [];
 
     var geocoder = new google.maps.Geocoder();
-       geocoder.geocode( { 'address': 'Japan'}, function(results, status) {
+       geocoder.geocode( { 'address': country}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
             map.setCenter(results[0].geometry.location);
             map.fitBounds(results[0].geometry.viewport);

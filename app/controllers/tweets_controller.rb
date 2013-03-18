@@ -9,19 +9,8 @@ class TweetsController < ApplicationController
       config.oauth_token_secret = "DM72hPh15LdGgGJLFORcQaR8GdFprH1FXjD0owg3Ao"
     end
 
-    @tweets = Twitter.search("%23earthquake", :count => 100).results
-    '''
-    @coords_hash = {}
-    @tweets.each do |tweet|
-      if not tweet.geo.nil?
-        coords = [tweet.geo.coordinates[0].round(2), tweet.geo.coordinates[1].round(2)]
-        @coords_hash[coords] = @coords_hash[coords].to_i + 1
-      end
-    @popular_coord = @coords_hash.sort_by {|k, v| v}.reverse.first
-    end
-    puts @coords_hash.inspect
-    puts @popular_coord.inspect
-    '''
+    @tweets = Twitter.search("%23" + params[:tag], :count => 100).results
+    @country = params[:country]
 
     respond_to do |format|
       format.html # index.html.erb
