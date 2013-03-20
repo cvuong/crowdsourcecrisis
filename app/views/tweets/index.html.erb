@@ -16,14 +16,6 @@
   <div id="map"></div>
 </div>
 
-<!--
-<ul class="nav nav-pills sticky-footer">
-  <li class="active"><a href="#">Map</a></li>
-  <li><a href="#">test</a></li>
-</ul>
--->
-
-
 <script type="text/javascript">
   $(function() {
     window.navView = new Cc.Views.NavView();
@@ -71,7 +63,6 @@
     });
 
     $(window).resize(function() {
-      console.log("inside");
       var $map = $("#map");
 
       $map.css("height", $(window).height() - 100);
