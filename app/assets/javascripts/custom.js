@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var $search = $("#search"),
-      $tagInput = $("#tag");
+      $tagInput = $("#tag"),
+      $map = $("#map");
 
   /*
   ** When user clicks on the search
@@ -11,4 +12,10 @@ $(document).ready(function() {
     var tag = $tagInput.val();
     window.location = "/" + tag;
   });
+
+  /*
+  ** Resize the maps DOM element
+  ** to be the height of the window
+  */
+  //$map.css("height", ($(window).height() - 300) + "px");
 });

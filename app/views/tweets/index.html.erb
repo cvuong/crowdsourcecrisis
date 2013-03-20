@@ -44,6 +44,7 @@
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    $("#map").css("height", $(window).height() - 200);
     var markers = [];
 
     var geocoder = new google.maps.Geocoder();
@@ -68,6 +69,18 @@
         markers.push(marker);
       }
     });
+
+    $(window).resize(function() {
+      console.log("inside");
+      var $map = $("#map");
+
+      $map.css("height", $(window).height() - 100);
+      google.maps.event.trigger(map, 'resize');
+      map.setZoom(map.getZoom());
+    });
+
+    $(window).resize();
+
 
   }
 
