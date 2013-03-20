@@ -1,18 +1,15 @@
 class Cc.Views.MapView extends Backbone.View
 
-  el: "#main"
+  el: "#map"
 
   template: JST["backbone/templates/tweets/map"]
 
   initialize: ->
     @render()
-    @addAll()
-
-  addAll: ->
-    @collection.forEach(@addOne, @)
-
-  addOne: (model) ->
 
   render: ->
-    @$el.html @template()
+    $("#activity").hide()
+    $("#map").css("position", "relative")
+    $("#map").css("left", "0px")
+    $(window).resize()
     @

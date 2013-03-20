@@ -1,6 +1,6 @@
 class Cc.Views.ActivityView extends Backbone.View
 
-  el: "#main"
+  el: "#activity"
 
   template: JST["backbone/templates/tweets/activity"]
 
@@ -16,5 +16,8 @@ class Cc.Views.ActivityView extends Backbone.View
     @$el.find("#activity-list").append @view.render().el
 
   render: ->
+    @$el.show()
     @$el.html @template()
+    $("#map").css("position", "absolute")
+    $("#map").css("left", "-1000px")
     @

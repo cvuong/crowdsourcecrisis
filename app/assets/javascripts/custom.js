@@ -13,9 +13,4 @@ $(document).ready(function() {
     window.location = "/" + tag;
   });
 
-  /*
-  ** Resize the maps DOM element
-  ** to be the height of the window
-  */
-  //$map.css("height", ($(window).height() - 300) + "px");
 });
