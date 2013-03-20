@@ -1,7 +1,8 @@
 $(document).ready(function() {
   var $search = $("#search"),
       $tagInput = $("#tag"),
-      $map = $("#map");
+      $map = $("#map"),
+      $country = $("#country");
 
   /*
   ** When user clicks on the search
@@ -9,8 +10,9 @@ $(document).ready(function() {
   ** query and go to /query
   */
   $search.bind("click", function() {
-    var tag = $tagInput.val();
-    window.location = "/" + tag;
+    var tag = $tagInput.val(),
+        country = $country.val();
+    window.location = "/" + tag + "/" + country;
   });
 
 });
