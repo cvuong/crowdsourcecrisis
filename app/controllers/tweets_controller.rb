@@ -9,7 +9,8 @@ class TweetsController < ApplicationController
       config.oauth_token_secret = "DM72hPh15LdGgGJLFORcQaR8GdFprH1FXjD0owg3Ao"
     end
 
-    @tweets = Twitter.search("%23" + params[:tag], :count => 100).results
+    @tag = params[:tag]
+    @tweets = Twitter.search("%23" + @tag, :count => 100).results
     @country = params[:country]
 
     respond_to do |format|
