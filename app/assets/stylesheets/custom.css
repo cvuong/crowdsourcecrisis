@@ -102,6 +102,16 @@ Header View
   color: #333;
 }
 
+.nav-pills > li > a {
+  border-radius: 0px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.nav-pills > li > a:hover {
+  color: #333;
+}
+
 /*
 Search View
 */
@@ -155,7 +165,7 @@ input[type="text"]::-webkit-input-placeholder {
   color: #FFFFFF;
 }
 
-a:visited {
+#search {
   color: #FFFFFF;
   font-weight: bold;
 }
