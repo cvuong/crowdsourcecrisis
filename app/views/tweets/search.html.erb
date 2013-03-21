@@ -1,16 +1,26 @@
 <div class="home-container">
   <div class="inner-container">
-    <h1>CrowdsourceCrisis</h1>
-    <label># </label>
-    <input id="tag" type="text" placeholder="Enter crisis tag"></input>
+    <h1>Crowdsource Crisis</h1>
+    <h2>Plot Tweets of Crisis</h2>
 
-    <label>Country: </label>
-    <input id="country" type="text" placeholder="Enter country name"></input>
-    <br />
+    <div id="search-container">
+        <form class="form-horizontal">
+            <div class="control-group">
+                <div class="controls">
+                    <input class="control-input" type="text" id="tag" placeholder='Enter crisis (e.g. "earthquake")'>
+                </div>
+            </div> 
 
-    Examples: <a href="/earthquake/Japan">earthquake (Japan)</a>, <a href="/earthquake/Haiti"> earthquake (Haiti)</a>
-    <br />
+            <div class="control-group">
+                <div class="controls">
+                    <input type="text" id="country" placeholder='Enter country (e.g. "Japan")'>
+                </div>
+            </div> 
 
-    <a id="search" class="btn btn-primary" href="#">Search</a>
+        </form>
+    </div>
+
+
+    <a id="search" class="btn btn-primary btn-large" href="#">Plot Map</a>
   </div>
 </div>
