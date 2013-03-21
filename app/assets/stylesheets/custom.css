@@ -17,7 +17,7 @@ html {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Condensed', sans-serif;
   margin: 0;
-  color: #555;
+  color: #444;
 }
 
 h1 {
@@ -100,16 +100,16 @@ input[type="text"]::-webkit-input-placeholder {
 }
 
 ::-webkit-input-placeholder {
-  color: #000;
+  color: #777;
 }
 
 ::-moz-placeholder {
-  color:#f00;
-} /* firefox 19+ */
+  color: #777;
+}
 
 :-ms-input-placeholder {
-  color:#f00;
-} /* ie */
+  color: #777;
+}
 
 .btn-primary {
   color: #FFFFFF;
