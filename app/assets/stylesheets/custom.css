@@ -118,6 +118,10 @@ Header View
   background-color: #333;
 }
 
+#navigation a {
+  color: #FFFFFF;
+}
+
 #navigation a:visited {
   color: #FFFFFF;
 }
@@ -238,3 +242,17 @@ Activity View
   font-style: italic;
 }
 
+/*
+Marker
+*/
+.marker p {
+  font-size: 14px;
+}
+
+.marker img {
+  float: left;
+}
+
+.marker-meta {
+  margin-left: 60px;
+}
