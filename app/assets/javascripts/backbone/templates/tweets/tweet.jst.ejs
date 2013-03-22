@@ -2,7 +2,7 @@
 <div class="activity-content">
   <%= text %>
   <div class="activity-meta">
-    <span class="handle"><a href="http://www.twitter.com/<%= user.screen_name %>"><%= user.screen_name %></a></span>
-    <span class="name"><%= user.name %></span>
+    <span class="label label-info handle"><a href="http://www.twitter.com/<%= user.screen_name %>"><%= user.screen_name %></a></span>
+    <span class="name"><strong><%= user.name %></strong></span>
     <span class="posted"><%= created_at %></span>
 </div>

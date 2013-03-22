@@ -8,6 +8,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #555555;
   font-size: 20px;
+  background-color: #FFFFFF;
 }
 
 html {
@@ -31,6 +32,10 @@ h2 {
   margin-bottom: 20px;
 }
 
+ul {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
 
 .sticky-footer {
   bottom: 0;
@@ -59,7 +64,6 @@ Header View
 
 .navbar {
   margin-bottom: 0;
-  background-color: #FFFFFF;
 }
 
 .navbar-inner {
@@ -68,48 +72,58 @@ Header View
 }
 
 .navbar-inverse .navbar-inner {
-  background-color: #FFFFFF;
+  background-color: #555555;
   background-image: none;
   border: 0;
-  border-bottom: 1px solid #CCCCCC;
   border-radius: 0;
   -webkit-border-radius: 0
   -moz-border-radius: 0;
 }
 
 .navbar-inverse .brand {
-  color: #333333;
+  color: #FFFFFF;
   font-weight: bold;
   font-size: 18px;
   text-shadow: none;
 }
 
 .navbar-inverse .brand:hover {
-  background-color: #FFFFFF;
+  background-color: #555555;
   text-shadow: none;
-  color: #333333;
+  color: #FFFFFF;
 }
 
 .navbar-inverse .brand, .navbar-inverse .nav > li > a {
   font-family: 'Open Sans', sans-serif;
   letter-spacing: -1px;
   font-size: 18px;
-  color: #333;
+  color: #FFFFFF;
   text-shadow: none;
 }
 
 .navbar-inverse .brand, .navbar-inverse .nav > li > a:hover {
-  color: #333;
+  color: #FFFFFF;
 }
 
 .nav-pills > li > a {
   border-radius: 0px;
-  text-transform: uppercase;
   font-weight: bold;
 }
 
 .nav-pills > li > a:hover {
-  color: #333;
+  color: #FFFFFF;
+}
+
+#navigation {
+  background-color: #333;
+}
+
+#navigation a:visited {
+  color: #FFFFFF;
+}
+
+#navigation a:hover {
+  background-color: #CCCCCC;
 }
 
 /*
@@ -207,5 +221,18 @@ Activity View
 
 #activity-list .activity-content {
   margin: 0 0 0 60px;
+}
+
+.handle a {
+  color: #FFFFFF;
+}
+
+.handle a:hover {
+  color: #FFFFFF;
+  background-color: #3a87ad;
+}
+
+.posted {
+  display: block;
 }
 
