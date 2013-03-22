@@ -20,9 +20,8 @@
 <script type="text/javascript">
   $(function() {
     window.navView = new Cc.Views.NavView();
-    window.tweets = <%= @tweets.to_json.html_safe -%>;
-
-    window.router = new Cc.Routers.Router({ tweets: <%= @tweets.to_json.html_safe -%>});
+    window.tweets = <%= @tweets_hash.to_json.html_safe -%>;
+    window.router = new Cc.Routers.Router({ tweets: window.tweets});
     Backbone.history.start();
 
 

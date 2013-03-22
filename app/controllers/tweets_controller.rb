@@ -1,3 +1,5 @@
+include ActionView::Helpers::DateHelper
+
 class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
@@ -13,9 +15,21 @@ class TweetsController < ApplicationController
     @tweets = Twitter.search("%23" + @tag, :count => 100).results
     @country = params[:country]
 
+    '''
+    @tweets.map do |tweet|
+      tweet["rel_time"] = distance_of_time_in_words_to_now(tweet.created_at)
+    end
+    '''
+    @tweets_json = @tweets.to_json
+    @tweets_hash = JSON.parse(@tweets_json)
+
+    @tweets_hash.each do |tweet|
+      tweet["relative_time"] = distance_of_time_in_words_to_now(tweet["created_at"]) || "unknown"
+    end
+
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @tweets }
+      format.json { render json: @tweets_hash }
     end
   end
 
