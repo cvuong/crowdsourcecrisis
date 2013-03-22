@@ -83,7 +83,7 @@ Header View
 .navbar-inverse .brand {
   color: #FFFFFF;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   text-shadow: none;
 }
 
@@ -95,8 +95,7 @@ Header View
 
 .navbar-inverse .brand, .navbar-inverse .nav > li > a {
   font-family: 'Open Sans', sans-serif;
-  letter-spacing: -1px;
-  font-size: 18px;
+  font-size: 14px;
   color: #FFFFFF;
   text-shadow: none;
 }
